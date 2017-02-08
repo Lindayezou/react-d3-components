@@ -83,16 +83,6 @@ export default React.createClass({
                           transition: transition
                         };
 
-            if (child && child.type.displayName === 'Axis') {
-                let scale = child.props.scale === "x" ? xScale : child.props.scale === "y" ? yScale : child.props.scale;
-
-                return React.cloneElement(child, {
-                    height: innerHeight,
-                    width: innerWidth,
-                    scale: scale
-                });
-            }
-
             return React.cloneElement(child, removePresentKeys(child, props));
         }, this);
 
@@ -115,11 +105,6 @@ function removePresentKeys(child, config) {
             continue;
         }
 
-        if (child.props.hasOwnProperty(key)) {
-            //console.log('fail 2', key);
-            //console.log(child.props[key]);
-            continue;
-        }
 
         empty[key] = config[key];
     }
