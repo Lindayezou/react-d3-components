@@ -83,7 +83,7 @@ export default React.createClass({
                           transition: transition
                         };
 
-            if (child.type.displayName === 'Axis') {
+            if (child && child.type.displayName === 'Axis') {
                 let scale = child.props.scale === "x" ? xScale : child.props.scale === "y" ? yScale : child.props.scale;
 
                 return React.cloneElement(child, {
