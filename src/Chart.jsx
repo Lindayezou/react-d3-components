@@ -61,10 +61,10 @@ export default React.createClass({
         // dont send the same stuff to all components,
         // maybe use propTypes, iterate over and only use the ones needed.
         // dont replace props if already set.
-        console.log("redraw graph");
+        console.log("redraw graph, redraw graph, redraw graph, redraw graph");
 
         let children = React.Children.map(this.props.children, function (child) {
-
+            console.log("this.props.children", this.props.children, child)
             let props = { data: data,
                           height: height,
                           width: width,
