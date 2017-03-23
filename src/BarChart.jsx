@@ -50,7 +50,7 @@ const DataSet = React.createClass({
             bars = data.map((stack, serieIndex) => values(stack).map((e, index) =>
                 <Bar
                     key={`${label(stack)}.${index}`}
-                    width={xScale.rangeBand() / data.length}
+                    width={60}
                     height={yScale(yScale.domain()[0]) - yScale(y(e))}
                     x={xScale(x(e)) + xScale.rangeBand() * serieIndex / data.length}
                     y={yScale(y(e))}
@@ -66,7 +66,7 @@ const DataSet = React.createClass({
                 return (
                     <Bar
                         key={`${label(stack)}.${index}`}
-                        width={xScale.rangeBand()}
+                        width={60}
                         height={yScale(yScale.domain()[0]) - yScale(y(e))}
                         x={xScale(x(e))}
                         y={yScale(y0(e) + y(e))}
